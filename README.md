@@ -115,12 +115,13 @@ From this point on, these environment variables will be available in every new t
 ### 4. Verify Setup
 
 ```bash
-# Open the website
+# Start the local server
 npm run dev
+```
 
-Open: **http://localhost:3000/pages/index.html**
+Open **http://localhost:3000/pages/index.html** in your browser. Then, in another terminal, launch Claude Code:
 
-# In another terminal, launch Claude Code
+```bash
 claude
 ```
 ---
@@ -159,9 +160,9 @@ NovaTech Solutions is a fictional tech consultancy website. It serves as a hands
 ```
 novatech-demo/
 ├── src/
-│   ├── pages/          # HTML pages (5 pages)
-│   ├── css/            # Stylesheets with design system
-│   └── js/             # JavaScript modules
+│   ├── pages/          # HTML pages (index, services, portfolio, team, contact)
+│   ├── css/            # variables.css, base.css, components.css, pages/*.css
+│   └── js/             # navigation, validation, contact-form, portfolio-filters
 ├── tests/
 │   ├── e2e/            # Playwright tests
 │   └── unit/           # Node.js unit tests
@@ -182,13 +183,18 @@ novatech-demo/
 Run these from the project root (`novatech-demo/`):
 
 ```bash
-npm run dev         # Start local server
-npm run lint        # Run ESLint
-npm run format      # Run Prettier
-npm run test        # Run all tests
-npm run test:e2e    # Run Playwright E2E tests
-npm run test:unit   # Run unit tests
+npm run dev           # Start local server on port 3000 (serves src/)
+npm run lint          # Run ESLint on src/js/
+npm run lint:fix      # Run ESLint and auto-fix
+npm run format        # Run Prettier (writes changes)
+npm run format:check  # Check formatting without writing
+npm run test          # Run unit tests, then E2E tests
+npm run test:unit     # Run unit tests (Node test runner)
+npm run test:e2e      # Run Playwright E2E tests (starts the dev server automatically)
+npm run test:e2e:ui   # Run Playwright in interactive UI mode
 ```
+
+For site structure, JavaScript module APIs, CSS architecture, and testing details, see [docs/architecture.md](docs/architecture.md). Design tokens and component specs are in [docs/figma-spec.md](docs/figma-spec.md). The planned backend API is in [docs/api-spec.md](docs/api-spec.md).
 
 ## Prerequisites
 
