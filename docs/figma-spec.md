@@ -48,7 +48,7 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, s
 
 ## Spacing
 
-Based on 4px grid:
+Based on 4px grid. In CSS, use `var(--spacing-N)` (see `src/css/variables.css`):
 
 | Token | Value |
 |-------|-------|
@@ -56,10 +56,13 @@ Based on 4px grid:
 | spacing-2 | 8px |
 | spacing-3 | 12px |
 | spacing-4 | 16px |
+| spacing-5 | 20px |
 | spacing-6 | 24px |
 | spacing-8 | 32px |
+| spacing-10 | 40px |
 | spacing-12 | 48px |
 | spacing-16 | 64px |
+| spacing-20 | 80px |
 
 ## Components
 
@@ -91,6 +94,8 @@ Based on 4px grid:
 - Mobile: < 768px
 - Tablet: 768px - 1024px
 - Desktop: > 1024px
+
+> Implementation note: the stylesheets currently use a single `max-width: 768px` breakpoint (plus `900px` in `contact.css`). No tablet or 1024px breakpoint exists in code.
 
 ## Figma Links
 
